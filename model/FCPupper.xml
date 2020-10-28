@@ -46,7 +46,7 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
     <material name="MatPlane" reflectance="0.5" shininess="1" specular="1" texrepeat="60 60" texture="texplane"/>
     <material name="geom" texture="texgeom" texuniform="true"/>
   <mesh file="FCBody.stl" scale="0.1 0.1 0.1"/>
-  <mesh file="CLS6336HV.stl"/>
+  <mesh file="M2006.stl"/>
   <mesh file="Hub.stl"/>
   <mesh file="ServoHorn.stl"/>
   <mesh file="UpperLeg.stl"/>
@@ -101,7 +101,7 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
            The vector [-1 0 1] is multiplied by a normalization constant of sqrt(2)/2 to give [-sqrt(2)/2 0 sqrt(2)/2]
            Notice this is exactly equal to the imaginary part of the quaternion-->
           <body pos="0.05 0.028 0.0542" quat="0 -0.7071068 0 0.7071068">
-            <geom type="mesh" mesh="CLS6336HV" material="ABS"/>
+            <geom type="mesh" mesh="M2006" material="ABS"/>
             <site type="box" pos="0.0205 -0.02 0.01" size="0.018 0.019 0.0101" material="CLS6336HV"/>
           </body>
           <!--fl servo-->
@@ -112,7 +112,7 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
            The vector [-1 0 1] is multiplied by a normalization constant of sqrt(2)/2 to give [-sqrt(2)/2 0 sqrt(2)/2]
            Notice this is exactly equal to the imaginary part of the quaternion-->
           <body pos="-0.03 0.028 0.0542" quat="0 -0.7071068 0 0.7071068">
-            <geom type="mesh" mesh="CLS6336HV" material="ABS"/>
+            <geom type="mesh" mesh="M2006" material="ABS"/>
             <site type="box" pos="0.0205 -0.02 0.01" size="0.018 0.019 0.0101" material="CLS6336HV"/>
           </body>
           <!--br servo-->
@@ -123,12 +123,12 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
            The vector [-1 0 1] is multiplied by a normalization constant of sqrt(2)/2 to give [-sqrt(2)/2 0 sqrt(2)/2]
            Notice this is exactly equal to the imaginary part of the quaternion-->
           <body pos="0.05 -0.1721 0.0542" quat="0 -0.7071068 0 0.7071068">
-            <geom type="mesh" mesh="CLS6336HV" material="ABS"/>
+            <geom type="mesh" mesh="M2006" material="ABS"/>
             <site type="box" pos="0.0205 -0.02 0.01" size="0.018 0.019 0.0101" material="CLS6336HV"/>
           </body>
           <body pos="-0.03 -0.1721 0.0542" quat="0 -0.7071068 0 0.7071068">
             <!--bl servo-->
-            <geom type="mesh" mesh="CLS6336HV" material="ABS"/>
+            <geom type="mesh" mesh="M2006" material="ABS"/>
             <site type="box" pos="0.0205 -0.02 0.01" size="0.018 0.019 0.0101" material="CLS6336HV"/>
           </body>
         </body>
