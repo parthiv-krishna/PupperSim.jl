@@ -39,12 +39,12 @@ include("record_video.jl")
 include("setup.jl")
 
 """
-    loadmodel(modelfile = "model/FCPupper.xml", width = 1920, height = 1080)
+    loadmodel(modelfile = "model/TCPupper.xml", width = 1920, height = 1080)
 
 Loads MuJoCo XML model and starts the simulation
 """
 function loadmodel(
-        modelfile = normpath(joinpath(dirname(pathof(@__MODULE__)), "../model/FCPupper.xml")),
+        modelfile = normpath(joinpath(dirname(pathof(@__MODULE__)), "../model/TCPupper.xml")),
         width = 1920, height = 1080
     )
     m = jlModel(modelfile)
