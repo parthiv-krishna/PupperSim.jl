@@ -46,7 +46,7 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
     <material name="MatPlane" reflectance="0.5" shininess="1" specular="1" texrepeat="60 60" texture="texplane"/>
     <material name="geom" texture="texgeom" texuniform="true"/>
   <mesh file="TCBody.stl" scale="0.001 0.001 0.001"/>
-  <mesh file="M2006.stl"/>
+  <mesh file="M2006.stl" scale=".001 .001 .001"/>
   <mesh file="Hub.stl"/>
   <mesh file="ServoHorn.stl"/>
   <mesh file="UpperLeg.stl"/>
@@ -55,14 +55,13 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
   <texture type="2d" file="Oak.png"/>
   <texture type="2d" file="CarbonFiber2D.png" name="CarbonFiber2D"/>
   <texture type="cube" file="CarbonFiber.png" gridsize="3 4" gridlayout=".U..LFRB.D.."/>
-  <texture type="cube" file="CLS6336HV.png"/>
   <texture type="cube" file="Marble.png"/>
   <material name="BrushedAluminum" texture="BrushedAluminum" specular="0.9" shininess="0.9" reflectance="0.3"/>
   <material name="CarbonFiber" texture="CarbonFiber" specular="0.9" shininess="0.9" reflectance="0.3"/>
-  <material name="CLS6336HV" texture="CLS6336HV" specular="0.9" shininess="0.9" reflectance="0.3"/>
+  <material name="M2006" specular="0.9" shininess="0.9" reflectance="0.3"/>
   <material name="CarbonFiber2D" texture="CarbonFiber2D" specular="0.9" shininess="0.9" reflectance="0.3"/>
   <material name="Oak" texture="Oak" specular="0.9" shininess="0.9" reflectance="0.3" texrepeat="4 4"/>
-  <material name="ABS" rgba=".1 .1 .1 1"/>
+  <material name="ABS" rgba="1 1 1 1"/>
   <material name="Marble" texture="Marble" rgba=".7 .65 .65 0.9"/>
 </asset>
 
@@ -101,8 +100,7 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
            The vector [-1 0 1] is multiplied by a normalization constant of sqrt(2)/2 to give [-sqrt(2)/2 0 sqrt(2)/2]
            Notice this is exactly equal to the imaginary part of the quaternion-->
           <body pos="0.05 0.028 0.0542" quat="0 -0.7071068 0 0.7071068">
-            <geom type="mesh" mesh="M2006" material="ABS"/>
-            <site type="box" pos="0.0205 -0.02 0.01" size="0.018 0.019 0.0101" material="CLS6336HV"/>
+            <geom type="mesh" mesh="M2006" material="ABS" />
           </body>
           <!--fl servo-->
           <!-- This is a +180 degree rotation about the vector sqrt(2)/2[-1 0 1].
@@ -113,7 +111,6 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
            Notice this is exactly equal to the imaginary part of the quaternion-->
           <body pos="-0.03 0.028 0.0542" quat="0 -0.7071068 0 0.7071068">
             <geom type="mesh" mesh="M2006" material="ABS"/>
-            <site type="box" pos="0.0205 -0.02 0.01" size="0.018 0.019 0.0101" material="CLS6336HV"/>
           </body>
           <!--br servo-->
           <!-- This is a +180 degree rotation about the vector sqrt(2)/2[-1 0 1].
@@ -124,12 +121,10 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
            Notice this is exactly equal to the imaginary part of the quaternion-->
           <body pos="0.05 -0.1721 0.0542" quat="0 -0.7071068 0 0.7071068">
             <geom type="mesh" mesh="M2006" material="ABS"/>
-            <site type="box" pos="0.0205 -0.02 0.01" size="0.018 0.019 0.0101" material="CLS6336HV"/>
           </body>
           <body pos="-0.03 -0.1721 0.0542" quat="0 -0.7071068 0 0.7071068">
             <!--bl servo-->
             <geom type="mesh" mesh="M2006" material="ABS"/>
-            <site type="box" pos="0.0205 -0.02 0.01" size="0.018 0.019 0.0101" material="CLS6336HV"/>
           </body>
         </body>
         <!--<site name="imu_site" size=".01 .01 .01" type="box"/>-->
@@ -141,10 +136,8 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
              and the imaginary part yields sin(-3pi/4) = +sqrt(2)/2
             Doubling theta to find the degree of rotation gives -3pi/2 = -270 degrees = +90 degrees-->
             <body pos="-0.02 -0.042 0.022" quat="0.7071068 0 0.7071068 0">
-              <geom type="mesh" mesh="Hub" material="ABS"/>
               <!-- Why are there two different sites here? Do we even use both of them? -->
-              <site type="box" pos="0.0129 -0.02 0.02955" quat="0.7071068 0 -0.7071068 0" size="0.018 0.019 0.0101" material="CLS6336HV"/>
-              <site type="box" pos="0.0129 0.044 0.02955" quat="0 -0.7071068 0 0.7071068" size="0.018 0.019 0.0101" material="CLS6336HV"/>
+              <geom type="mesh" mesh="M2006" material="ABS" pos="0.0129 0.04 0.02955" quat="0.707 0.707 0 0"/>
             </body>
             <joint name="fr_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="fr" pos="0 -0.03 0">
@@ -152,6 +145,7 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
                 <geom axisangle="0 1 0 0" name="fr" fromto="0 0 0 0 0 -0.080" size="0.01" type="capsule" material="CarbonFiber2D" density="50"/>
                 <body name="fr2" pos="0 0 -0.0785">
                     <joint name="fr_y2" axis="0 1 0" range="-3.14 0.0"/>
+                    <geom type="mesh" mesh="M2006" material="ABS" pos="0 -.05 .04" quat="0.707 0.707 0 0"/>
                     <geom axisangle="0 1 0 0" name="fr_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="capsule" material="CarbonFiber2D" density="50"/>
                 </body>
             </body>
@@ -160,10 +154,8 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
         <body name="fl_module" pos="0.1 0.04 0">
             <!--<geom pos = "0 0.0132 0" name="fl_block" type="box" size="0.0197 0.0372 0.0107" rgba="0.6 0.8 .4 1"/>-->
             <body pos="-0.022 0.042 -0.004" quat="0 0.7071068 0 0.7071068">
-              <geom type="mesh" mesh="Hub" material="ABS"/>
-              <!-- Why are there two different sites here? Do we even use both of them? -->
-              <site type="box" pos="0.0129 -0.02 0.02955" quat="0.7071068 0 -0.7071068 0" size="0.018 0.019 0.0101" material="CLS6336HV"/>
-              <site type="box" pos="0.0129 0.044 0.02955" quat="0 -0.7071068 0 0.7071068" size="0.018 0.019 0.0101" material="CLS6336HV"/>
+                            <!-- Why are there two different sites here? Do we even use both of them? -->
+              <geom type="mesh" mesh="M2006" material="ABS"  pos="0.0129 0.044 0.02955" quat="0.707 0.707 0 0"/>
             </body>
             <joint name="fl_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="fl" pos="0 0.03 0">
@@ -171,6 +163,7 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
                 <geom axisangle="0 1 0 0" name="fl" fromto="0 0 0 0 0 -0.080" size="0.01" type="capsule" material="CarbonFiber2D" density="50"/>
                 <body name="fl2" pos="0 0 -0.0785">
                     <joint name="fl_y2" axis="0 1 0" range="-3.14 0.0"/>
+                    <geom type="mesh" mesh="M2006" material="ABS" pos="0 -.05 .04" quat="0.707 0.707 0 0"/>
                     <geom axisangle="0 1 0 0" name="fl_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="capsule" material="CarbonFiber2D" density="50"/>
                 </body>
             </body>
@@ -179,10 +172,8 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
         <body name="br_module" pos="-0.1 -0.04 0">
             <!--<geom pos = "0 -0.0132 0" name="br_block" type="box" size="0.0197 0.0372 0.0107" rgba="0.6 0.8 .4 1"/>-->
             <body pos="-0.02 -0.042 0.022" quat="0.7071068 0 0.7071068 0">
-              <geom type="mesh" mesh="Hub" material="ABS"/>
               <!-- Why are there two different sites here? Do we even use both of them? -->
-              <site type="box" pos="0.0129 -0.02 0.02955" quat="0.7071068 0 -0.7071068 0" size="0.018 0.019 0.0101" material="CLS6336HV"/>
-              <site type="box" pos="0.0129 0.044 0.02955" quat="0 -0.7071068 0 0.7071068" size="0.018 0.019 0.0101" material="CLS6336HV"/>
+              <geom type="mesh" mesh="M2006" material="ABS" pos="0.0129 0.044 0.02955" quat="0.707 0.707 0 0"/>
             </body>
             <joint name="br_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="br" pos="0 -0.03 0">
@@ -190,6 +181,7 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
                 <geom axisangle="0 1 0 0" name="br" fromto="0 0 0 0 0 -0.080" size="0.01" type="capsule" material="CarbonFiber2D" density="50"/>
                 <body name="br2" pos="0 0 -0.0785">
                     <joint name="br_y2" axis="0 1 0" range="-3.14 0.0"/>
+                    <geom type="mesh" mesh="M2006" material="ABS" pos="0 -.05 .04" quat="0.707 0.707 0 0"/>
                     <geom axisangle="0 1 0 0" name="br_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="capsule" material="CarbonFiber2D" density="50"/>
                 </body>
             </body>
@@ -198,10 +190,8 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
         <body name="bl_module" pos="-0.1 0.04 0">
             <!--<geom pos = "0 0.0132 0" name="bl_block" type="box" size="0.0197 0.0372 0.0107" rgba="0.6 0.8 .4 1"/>-->
             <body pos="-0.022 0.042 -0.004" quat="0 0.7071068 0 0.7071068">
-              <geom type="mesh" mesh="Hub" material="ABS"/>
               <!-- Why are there two different sites here? Do we even use both of them? -->
-              <site type="box" pos="0.0129 -0.02 0.02955" quat="0.7071068 0 -0.7071068 0" size="0.018 0.019 0.0101" material="CLS6336HV"/>
-              <site type="box" pos="0.0129 0.044 0.02955" quat="0 -0.7071068 0 0.7071068" size="0.018 0.019 0.0101" material="CLS6336HV"/>
+              <geom type="mesh" mesh="M2006" material="ABS" pos="0.0129 0.044 0.02955" quat="0.707 0.707 0 0"/>
             </body>
             <joint name="bl_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="bl" pos="0 0.03 0">
@@ -209,6 +199,7 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
                 <geom axisangle="0 1 0 0" name="bl" fromto="0 0 0 0 0 -0.080" size="0.01" type="capsule" material="CarbonFiber2D" density="50"/>
                 <body name="bl2" pos="0 0 -0.0785">
                     <joint name="bl_y2" axis="0 1 0" range="-3.14 0.0"/>
+                    <geom type="mesh" mesh="M2006" material="ABS" pos="0 -.05 .04" quat="0.707 0.707 0 0"/>
                     <geom axisangle="0 1 0 0" name="bl_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="capsule" material="CarbonFiber2D" density="50"/>
                 </body>
             </body>
