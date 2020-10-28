@@ -45,7 +45,7 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
     <texture builtin="checker" height="100" name="texplane" rgb1="0 0 0" rgb2="0.8 0.8 0.8" type="2d" width="100"/>
     <material name="MatPlane" reflectance="0.5" shininess="1" specular="1" texrepeat="60 60" texture="texplane"/>
     <material name="geom" texture="texgeom" texuniform="true"/>
-  <mesh file="FCBody.stl" scale="0.1 0.1 0.1"/>
+  <mesh file="TCBody.stl" scale="0.001 0.001 0.001"/>
   <mesh file="M2006.stl"/>
   <mesh file="Hub.stl"/>
   <mesh file="ServoHorn.stl"/>
@@ -91,7 +91,7 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
         Doubling theta to find the degree of rotation gives -3pi/2 = -270 degrees = +90 degrees-->
         <body pos="0.0 0.0 -0.03425" quat="-0.7071068 0 0 0.7071068">
           <camera name="puppercam" pos="0 0.12 0.11" quat="0.7453559925 0.6666666 0 0"/>
-          <geom type="mesh" mesh="FCBody" pos="0 -0.133925 0.0015" quat="0 -0.7071068 0 0.7071068" material="ABS"/>
+          <geom type="mesh" mesh="TCBody" pos="0 -0.08 0.05" quat="0 0 0.7071068 0.7071068" material="ABS"/>
           <site type="box" pos="0 0 0.0666" size="0.03 0.15 0.002" material="CarbonFiber" rgba=".5 .5 .5 .1"/>
           <!--fr servo-->
           <!-- This is a +180 degree rotation about the vector sqrt(2)/2[-1 0 1].
