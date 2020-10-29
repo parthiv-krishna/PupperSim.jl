@@ -99,9 +99,7 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
            Doubling theta to find the degree of rotation gives pi = 180 degrees
            The vector [-1 0 1] is multiplied by a normalization constant of sqrt(2)/2 to give [-sqrt(2)/2 0 sqrt(2)/2]
            Notice this is exactly equal to the imaginary part of the quaternion-->
-          <body pos="0.05 0.028 0.0542" quat="0 -0.7071068 0 0.7071068">
-            <geom type="mesh" mesh="M2006" material="ABS" />
-          </body>
+
           <!--fl servo-->
           <!-- This is a +180 degree rotation about the vector sqrt(2)/2[-1 0 1].
            Recall the real part yields cos(pi/2) = 0,
@@ -109,9 +107,7 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
            Doubling theta to find the degree of rotation gives pi = 180 degrees
            The vector [-1 0 1] is multiplied by a normalization constant of sqrt(2)/2 to give [-sqrt(2)/2 0 sqrt(2)/2]
            Notice this is exactly equal to the imaginary part of the quaternion-->
-          <body pos="-0.03 0.028 0.0542" quat="0 -0.7071068 0 0.7071068">
-            <geom type="mesh" mesh="M2006" material="ABS"/>
-          </body>
+
           <!--br servo-->
           <!-- This is a +180 degree rotation about the vector sqrt(2)/2[-1 0 1].
            Recall the real part yields cos(pi/2) = 0,
@@ -119,13 +115,8 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
            Doubling theta to find the degree of rotation gives pi = 180 degrees
            The vector [-1 0 1] is multiplied by a normalization constant of sqrt(2)/2 to give [-sqrt(2)/2 0 sqrt(2)/2]
            Notice this is exactly equal to the imaginary part of the quaternion-->
-          <body pos="0.05 -0.1721 0.0542" quat="0 -0.7071068 0 0.7071068">
-            <geom type="mesh" mesh="M2006" material="ABS"/>
-          </body>
-          <body pos="-0.03 -0.1721 0.0542" quat="0 -0.7071068 0 0.7071068">
-            <!--bl servo-->
-            <geom type="mesh" mesh="M2006" material="ABS"/>
-          </body>
+
+
         </body>
         <!--<site name="imu_site" size=".01 .01 .01" type="box"/>-->
 
