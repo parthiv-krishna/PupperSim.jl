@@ -46,7 +46,7 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
     <material name="MatPlane" reflectance="0.5" shininess="1" specular="1" texrepeat="60 60" texture="texplane"/>
     <material name="geom" texture="texgeom" texuniform="true"/>
   <mesh file="TCBody.stl" scale="0.001 0.001 0.001"/>
-  <mesh file="M2006.stl" scale=".001 .001 .001"/>
+  <mesh file="M2006.stl" scale=".001 .001 .001" />
   <mesh file="Hub.stl"/>
   <mesh file="ServoHorn.stl"/>
   <mesh file="UpperLeg.stl"/>
@@ -58,7 +58,7 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
   <texture type="cube" file="Marble.png"/>
   <material name="BrushedAluminum" texture="BrushedAluminum" specular="0.9" shininess="0.9" reflectance="0.3"/>
   <material name="CarbonFiber" texture="CarbonFiber" specular="0.9" shininess="0.9" reflectance="0.3"/>
-  <material name="M2006" specular="0.9" shininess="0.9" reflectance="0.3"/>
+  <material name="M2006" specular="0.9" shininess="0.9" reflectance="0.3" rgba = ".1 .1 .1 1"/>
   <material name="CarbonFiber2D" texture="CarbonFiber2D" specular="0.9" shininess="0.9" reflectance="0.3"/>
   <material name="Oak" texture="Oak" specular="0.9" shininess="0.9" reflectance="0.3" texrepeat="4 4"/>
   <material name="ABS" rgba="1 1 1 1"/>
@@ -128,16 +128,16 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
             Doubling theta to find the degree of rotation gives -3pi/2 = -270 degrees = +90 degrees-->
             <body pos="-0.02 -0.042 0.022" quat="0.7071068 0 0.7071068 0">
               <!-- Why are there two different sites here? Do we even use both of them? -->
-              <geom type="mesh" mesh="M2006" material="ABS" pos="0.0129 0.04 0.02955" quat="0.707 0.707 0 0"/>
+              <geom type="mesh" mesh="M2006" material="M2006" pos="0.0129 0.04 0.02955" quat="0.707 0.707 0 0"/>
             </body>
             <joint name="fr_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="fr" pos="0 -0.03 0">
                 <joint name="fr_y" axis="0 1 0" range="-1.57 1.57"/>
-                <geom axisangle="0 1 0 0" name="fr" fromto="0 0 0 0 0 -0.080" size="0.01" type="capsule" material="CarbonFiber2D" density="50"/>
+                <geom axisangle="0 1 0 0" name="fr" fromto="0 0 0 0 0 -0.080" size="0.01" type="capsule" rgba = "1 1 1 1" density="50"/>
                 <body name="fr2" pos="0 0 -0.0785">
                     <joint name="fr_y2" axis="0 1 0" range="-3.14 0.0"/>
-                    <geom type="mesh" mesh="M2006" material="ABS" pos="0 -.05 .04" quat="0.707 0.707 0 0"/>
-                    <geom axisangle="0 1 0 0" name="fr_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="capsule" material="CarbonFiber2D" density="50"/>
+                    <geom type="mesh" mesh="M2006" material="M2006" pos="0 -.05 .04" quat="0.707 0.707 0 0"/>
+                    <geom axisangle="0 1 0 0" name="fr_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="capsule" rgba = "1 1 1 1" density="50"/>
                 </body>
             </body>
         </body>
@@ -146,16 +146,16 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
             <!--<geom pos = "0 0.0132 0" name="fl_block" type="box" size="0.0197 0.0372 0.0107" rgba="0.6 0.8 .4 1"/>-->
             <body pos="-0.022 0.042 -0.004" quat="0 0.7071068 0 0.7071068">
                             <!-- Why are there two different sites here? Do we even use both of them? -->
-              <geom type="mesh" mesh="M2006" material="ABS"  pos="0.0129 0.044 0.02955" quat="0.707 0.707 0 0"/>
+              <geom type="mesh" mesh="M2006" material="M2006"  pos="0.0129 0.044 0.02955" quat="0.707 0.707 0 0"/>
             </body>
             <joint name="fl_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="fl" pos="0 0.03 0">
                 <joint name="fl_y" axis="0 1 0" range="-1.57 1.57"/>
-                <geom axisangle="0 1 0 0" name="fl" fromto="0 0 0 0 0 -0.080" size="0.01" type="capsule" material="CarbonFiber2D" density="50"/>
+                <geom axisangle="0 1 0 0" name="fl" fromto="0 0 0 0 0 -0.080" size="0.01" type="capsule" rgba = "1 1 1 1" density="50"/>
                 <body name="fl2" pos="0 0 -0.0785">
                     <joint name="fl_y2" axis="0 1 0" range="-3.14 0.0"/>
-                    <geom type="mesh" mesh="M2006" material="ABS" pos="0 -.05 .04" quat="0.707 0.707 0 0"/>
-                    <geom axisangle="0 1 0 0" name="fl_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="capsule" material="CarbonFiber2D" density="50"/>
+                    <geom type="mesh" mesh="M2006" material="M2006" pos="0 -.05 .04" quat="0.707 0.707 0 0"/>
+                    <geom axisangle="0 1 0 0" name="fl_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="capsule" rgba = "1 1 1 1" density="50"/>
                 </body>
             </body>
         </body>
@@ -164,16 +164,16 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
             <!--<geom pos = "0 -0.0132 0" name="br_block" type="box" size="0.0197 0.0372 0.0107" rgba="0.6 0.8 .4 1"/>-->
             <body pos="-0.02 -0.042 0.022" quat="0.7071068 0 0.7071068 0">
               <!-- Why are there two different sites here? Do we even use both of them? -->
-              <geom type="mesh" mesh="M2006" material="ABS" pos="0.0129 0.044 0.02955" quat="0.707 0.707 0 0"/>
+              <geom type="mesh" mesh="M2006" material="M2006" pos="0.0129 0.044 0.02955" quat="0.707 0.707 0 0"/>
             </body>
             <joint name="br_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="br" pos="0 -0.03 0">
                 <joint name="br_y" axis="0 1 0" range="-1.57 1.57"/>
-                <geom axisangle="0 1 0 0" name="br" fromto="0 0 0 0 0 -0.080" size="0.01" type="capsule" material="CarbonFiber2D" density="50"/>
+                <geom axisangle="0 1 0 0" name="br" fromto="0 0 0 0 0 -0.080" size="0.01" type="capsule" rgba = "1 1 1 1" density="50"/>
                 <body name="br2" pos="0 0 -0.0785">
                     <joint name="br_y2" axis="0 1 0" range="-3.14 0.0"/>
-                    <geom type="mesh" mesh="M2006" material="ABS" pos="0 -.05 .04" quat="0.707 0.707 0 0"/>
-                    <geom axisangle="0 1 0 0" name="br_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="capsule" material="CarbonFiber2D" density="50"/>
+                    <geom type="mesh" mesh="M2006" material="M2006" pos="0 -.05 .04" quat="0.707 0.707 0 0"/>
+                    <geom axisangle="0 1 0 0" name="br_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="capsule" rgba = "1 1 1 1" density="50"/>
                 </body>
             </body>
         </body>
@@ -182,16 +182,16 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
             <!--<geom pos = "0 0.0132 0" name="bl_block" type="box" size="0.0197 0.0372 0.0107" rgba="0.6 0.8 .4 1"/>-->
             <body pos="-0.022 0.042 -0.004" quat="0 0.7071068 0 0.7071068">
               <!-- Why are there two different sites here? Do we even use both of them? -->
-              <geom type="mesh" mesh="M2006" material="ABS" pos="0.0129 0.044 0.02955" quat="0.707 0.707 0 0"/>
+              <geom type="mesh" mesh="M2006" material="M2006" pos="0.0129 0.044 0.02955" quat="0.707 0.707 0 0"/>
             </body>
             <joint name="bl_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="bl" pos="0 0.03 0">
                 <joint name="bl_y" axis="0 1 0" range="-1.57 1.57"/>
-                <geom axisangle="0 1 0 0" name="bl" fromto="0 0 0 0 0 -0.080" size="0.01" type="capsule" material="CarbonFiber2D" density="50"/>
+                <geom axisangle="0 1 0 0" name="bl" fromto="0 0 0 0 0 -0.080" size="0.01" type="capsule" rgba = "1 1 1 1" density="50"/>
                 <body name="bl2" pos="0 0 -0.0785">
                     <joint name="bl_y2" axis="0 1 0" range="-3.14 0.0"/>
-                    <geom type="mesh" mesh="M2006" material="ABS" pos="0 -.05 .04" quat="0.707 0.707 0 0"/>
-                    <geom axisangle="0 1 0 0" name="bl_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="capsule" material="CarbonFiber2D" density="50"/>
+                    <geom type="mesh" mesh="M2006" material="M2006" pos="0 -.05 .04" quat="0.707 0.707 0 0"/>
+                    <geom axisangle="0 1 0 0" name="bl_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="capsule" rgba = "1 1 1 1" density="50"/>
                 </body>
             </body>
         </body>
