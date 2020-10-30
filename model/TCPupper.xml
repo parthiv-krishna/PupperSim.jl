@@ -49,8 +49,8 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
   <mesh file="M2006.stl" scale=".001 .001 .001" />
   <mesh file="Hub.stl"/>
   <mesh file="ServoHorn.stl"/>
-  <mesh file="UpperLeg.stl"/>
-  <mesh file="LowerLeg.stl"/>
+  <mesh file="fcupperleg.stl" scale="0.001 0.001 0.001"/>
+  <mesh file="fclowerleg.stl" scale="0.001 0.001 0.001"/>
   <texture type="2d" file="BrushedAluminum.png"/>
   <texture type="2d" file="Oak.png"/>
   <texture type="2d" file="CarbonFiber2D.png" name="CarbonFiber2D"/>
@@ -133,13 +133,15 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
             <joint name="fr_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="fr" pos="0 -0.03 0">
                 <joint name="fr_y" axis="0 1 0" range="-1.57 1.57"/>
-                <geom axisangle="0 1 0 0" name="fr" fromto="0 0 0 0 0 -0.080" size="0.01" type="mesh" mesh="fcupperleg" rgba = "1 1 1 1" density="50"/>
-                <body name="fr2" pos="0 0 -0.0785">
-                    <joint name="fr_y2" axis="0 1 0" range="-3.14 0.0"/>
-    
-                    <geom type="mesh" mesh="M2006" material="M2006" pos="-0.013 -0.04 0.015" quat="0 0 -.707 .707"/>
-                    <geom axisangle="0 1 0 0" name="fr_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="mesh" mesh="fclowerleg" rgba = "1 1 1 1" density="50"/>
-
+                  <body name = "frup" pos = "0 0 0" quat=".5 -.5 -.5 .5">
+                <geom axisangle="0 1 0 0" name="fr" size="0.01" type="mesh" mesh="fcupperleg" rgba = "1 1 1 1" density="50"/>
+              </body>
+                <body name="fr2" pos="0 0 -0.0785" quat="0 0 -.707 .707">
+                  <geom type="mesh" mesh="M2006" material="M2006" pos="0.013 -0.02 0.035" />
+                    <body name = "frlow" pos = "0 0 0" quat="0 -1 0 0">
+                      <joint name="fr_y2" axis="0 0 1" range="-3.14 0.0"/>
+                    <geom axisangle="0 1 0 0" name="fr_l2"  size="0.01" type="mesh" mesh="fclowerleg" rgba = "1 1 1 1" density="50"/>
+                  </body>
                 </body>
             </body>
         </body>
@@ -153,11 +155,15 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
             <joint name="fl_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="fl" pos="0 0.03 0">
                 <joint name="fl_y" axis="0 1 0" range="-1.57 1.57"/>
-                <geom axisangle="0 1 0 0" name="fl" fromto="0 0 0 0 0 -0.080" size="0.01" type="capsule" rgba = "1 1 1 1" density="50"/>
+                <body name = "flup" pos = "0 0 0" quat=".5 -.5 .5 -.5">
+              <geom axisangle="0 1 0 0" name="fl" size="0.01" type="mesh" mesh="fcupperleg" rgba = "1 1 1 1" density="50"/>
+            </body>
                 <body name="fl2" pos="0 0 -0.0785">
-                    <joint name="fl_y2" axis="0 1 0" range="-3.14 0.0"/>
                     <geom type="mesh" mesh="M2006" material="M2006" pos="-0.013 .04 -0.015" quat="0 0 .707 .707"/>
-                    <geom axisangle="0 1 0 0" name="fl_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="capsule" rgba = "1 1 1 1" density="50"/>
+                    <body name = "fllow" pos = "0 0 0" quat="0 0 .707 .707">
+                      <joint name="fl_y2" axis="0 0 1" range="-3.14 0.0"/>
+                    <geom axisangle="0 1 0 0" name="fl_l2"  size="0.01" type="mesh" mesh="fclowerleg" rgba = "1 1 1 1" density="50"/>
+                  </body>
                 </body>
             </body>
         </body>
@@ -171,11 +177,15 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
             <joint name="br_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="br" pos="0 -0.03 0">
                 <joint name="br_y" axis="0 1 0" range="-1.57 1.57"/>
-                <geom axisangle="0 1 0 0" name="br" fromto="0 0 0 0 0 -0.080" size="0.01" type="capsule" rgba = "1 1 1 1" density="50"/>
-                <body name="br2" pos="0 0 -0.0785">
-                    <joint name="br_y2" axis="0 1 0" range="-3.14 0.0"/>
-                    <geom type="mesh" mesh="M2006" material="M2006" pos="-0.013 -0.04 0.015" quat="0 0 -.707 .707"/>
-                    <geom axisangle="0 1 0 0" name="br_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="capsule" rgba = "1 1 1 1" density="50"/>
+                <body name = "brup" pos = "0 0 0" quat=".5 -.5 -.5 .5">
+              <geom axisangle="0 1 0 0" name="br" size="0.01" type="mesh" mesh="fcupperleg" rgba = "1 1 1 1" density="50"/>
+              </body>
+                <body name="br2" pos="0 0 -0.0785" quat="0 0 -.707 .707">
+                    <geom type="mesh" mesh="M2006" material="M2006"  pos="0.013 -0.02 0.035"/>
+                    <body name = "brlow" pos = "0 0 0" quat="0 -1 0 0">
+                      <joint name="br_y2" axis="0 0 1" range="-3.14 0.0"/>
+                    <geom axisangle="0 1 0 0" name="br_l2"  size="0.01" type="mesh" mesh="fclowerleg" rgba = "1 1 1 1" density="50"/>
+                  </body>
                 </body>
             </body>
         </body>
@@ -189,11 +199,15 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
             <joint name="bl_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="bl" pos="0 0.03 0">
                 <joint name="bl_y" axis="0 1 0" range="-1.57 1.57"/>
-                <geom axisangle="0 1 0 0" name="bl" fromto="0 0 0 0 0 -0.080" size="0.01" type="capsule" rgba = "1 1 1 1" density="50"/>
+                <body name = "blup" pos = "0 0 0" quat=".5 -.5 .5 -.5">
+              <geom axisangle="0 1 0 0" name="bl" size="0.01" type="mesh" mesh="fcupperleg" rgba = "1 1 1 1" density="50"/>
+            </body>
                 <body name="bl2" pos="0 0 -0.0785">
-                    <joint name="bl_y2" axis="0 1 0" range="-3.14 0.0"/>
                     <geom type="mesh" mesh="M2006" material="M2006" pos="-0.013 .04 -0.015" quat="0 0 .707 .707"/>
-                    <geom axisangle="0 1 0 0" name="bl_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="capsule" rgba = "1 1 1 1" density="50"/>
+                    <body name = "bllow" pos = "0 0 0" quat="0 0 .707 .707">
+                      <joint name="bl_y2" axis="0 0 1" range="-3.14 0.0"/>
+                    <geom axisangle="0 1 0 0" name="bl_l2"  size="0.01" type="mesh" mesh="fclowerleg" rgba = "1 1 1 1" density="50"/>
+                  </body>
                 </body>
             </body>
         </body>
