@@ -128,7 +128,8 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
             Doubling theta to find the degree of rotation gives -3pi/2 = -270 degrees = +90 degrees-->
             <body pos="-0.02 -0.042 0.022" quat="0.7071068 0 0.7071068 0">
               <!-- Why are there two different sites here? Do we even use both of them? -->
-              <geom type="mesh" mesh="M2006" material="M2006" pos="0.04 0.055 0.0355" quat="0.707 -0.707 0 0"/>
+              <!--                                            up/down   in/out   front/back-->
+              <geom type="mesh" mesh="M2006" material="M2006" pos="0.0355 0.05 0.0355" quat="0.707 -0.707 0 0"/>
             </body>
             <joint name="fr_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="fr" pos="0 -0.03 0">
@@ -137,7 +138,8 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
                 <geom axisangle="0 1 0 0" name="fr" size="0.01" type="mesh" mesh="fcupperleg" rgba = "1 1 1 1" density="50"/>
               </body>
                 <body name="fr2" pos="0 0 -0.0785" quat="0 0 -.707 .707">
-                  <geom type="mesh" mesh="M2006" material="M2006" pos="0.013 -0.02 0.035" />
+                    <!--                                            front/back up/down in/out -->
+                    <geom type="mesh" mesh="M2006" material="M2006"  pos="0.014 -0.015 0.0375"/>
                     <body name = "frlow" pos = "0 0 0" quat="0 -1 0 0">
                       <joint name="fr_y2" axis="0 0 1" range="-3.14 0.0"/>
                     <geom axisangle="0 1 0 0" name="fr_l2"  size="0.01" type="mesh" mesh="fclowerleg" rgba = "1 1 1 1" density="50"/>
@@ -150,7 +152,8 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
             <!--<geom pos = "0 0.0132 0" name="fl_block" type="box" size="0.0197 0.0372 0.0107" rgba="0.6 0.8 .4 1"/>-->
             <body pos="-0.022 0.042 -0.004" quat="0 0.7071068 0 0.7071068">
                             <!-- Why are there two different sites here? Do we even use both of them? -->
-              <geom type="mesh" mesh="M2006" material="M2006" pos="0.014 0.055 0.0365" quat="0.707 -0.707 0 0"/>
+              <!--                                            up/down   in/out   front/back-->
+              <geom type="mesh" mesh="M2006" material="M2006" pos="0.018 0.05 0.0365" quat="0.707 -0.707 0 0"/>
             </body>
             <joint name="fl_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="fl" pos="0 0.03 0">
@@ -159,7 +162,8 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
               <geom axisangle="0 1 0 0" name="fl" size="0.01" type="mesh" mesh="fcupperleg" rgba = "1 1 1 1" density="50"/>
             </body>
                 <body name="fl2" pos="0 0 -0.0785">
-                    <geom type="mesh" mesh="M2006" material="M2006" pos="-0.013 .04 -0.015" quat="0 0 .707 .707"/>
+                    <!--                                            front/back in/out up/down -->
+                    <geom type="mesh" mesh="M2006" material="M2006" pos="-0.013 0.03 -0.015" quat="0 0 .707 .707"/>
                     <body name = "fllow" pos = "0 0 0" quat="0 0 .707 .707">
                       <joint name="fl_y2" axis="0 0 1" range="-3.14 0.0"/>
                     <geom axisangle="0 1 0 0" name="fl_l2"  size="0.01" type="mesh" mesh="fclowerleg" rgba = "1 1 1 1" density="50"/>
@@ -172,7 +176,8 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
             <!--<geom pos = "0 -0.0132 0" name="br_block" type="box" size="0.0197 0.0372 0.0107" rgba="0.6 0.8 .4 1"/>-->
             <body pos="-0.02 -0.042 0.022" quat="0.7071068 0 0.7071068 0">
               <!-- Why are there two different sites here? Do we even use both of them? -->
-              <geom type="mesh" mesh="M2006" material="M2006" pos="0.04 0.055 0.0355" quat="0.707 -0.707 0 0"/>
+              <!--                                            up/down   in/out   front/back-->
+              <geom type="mesh" mesh="M2006" material="M2006" pos="0.0355 0.05 0.0355" quat="0.707 -0.707 0 0"/>
             </body>
             <joint name="br_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="br" pos="0 -0.03 0">
@@ -181,7 +186,8 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
               <geom axisangle="0 1 0 0" name="br" size="0.01" type="mesh" mesh="fcupperleg" rgba = "1 1 1 1" density="50"/>
               </body>
                 <body name="br2" pos="0 0 -0.0785" quat="0 0 -.707 .707">
-                    <geom type="mesh" mesh="M2006" material="M2006"  pos="0.013 -0.02 0.035"/>
+                    <!--                                            front/back up/down in/out -->
+                    <geom type="mesh" mesh="M2006" material="M2006"  pos="0.014 -0.015 0.0375"/>
                     <body name = "brlow" pos = "0 0 0" quat="0 -1 0 0">
                       <joint name="br_y2" axis="0 0 1" range="-3.14 0.0"/>
                     <geom axisangle="0 1 0 0" name="br_l2"  size="0.01" type="mesh" mesh="fclowerleg" rgba = "1 1 1 1" density="50"/>
@@ -194,7 +200,8 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
             <!--<geom pos = "0 0.0132 0" name="bl_block" type="box" size="0.0197 0.0372 0.0107" rgba="0.6 0.8 .4 1"/>-->
             <body pos="-0.022 0.042 -0.004" quat="0 0.7071068 0 0.7071068">
               <!-- Why are there two different sites here? Do we even use both of them? -->
-              <geom type="mesh" mesh="M2006" material="M2006" pos="0.014 0.055 0.0365" quat="0.707 -0.707 0 0"/>
+              <!--                                            up/down   in/out   front/back-->
+              <geom type="mesh" mesh="M2006" material="M2006" pos="0.018 0.05 0.0365" quat="0.707 -0.707 0 0"/>
             </body>
             <joint name="bl_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="bl" pos="0 0.03 0">
@@ -203,7 +210,8 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
               <geom axisangle="0 1 0 0" name="bl" size="0.01" type="mesh" mesh="fcupperleg" rgba = "1 1 1 1" density="50"/>
             </body>
                 <body name="bl2" pos="0 0 -0.0785">
-                    <geom type="mesh" mesh="M2006" material="M2006" pos="-0.013 .04 -0.015" quat="0 0 .707 .707"/>
+                    <!--                                            front/back in/out up/down -->
+                    <geom type="mesh" mesh="M2006" material="M2006" pos="-0.013 0.03 -0.015" quat="0 0 .707 .707"/>
                     <body name = "bllow" pos = "0 0 0" quat="0 0 .707 .707">
                       <joint name="bl_y2" axis="0 0 1" range="-3.14 0.0"/>
                     <geom axisangle="0 1 0 0" name="bl_l2"  size="0.01" type="mesh" mesh="fclowerleg" rgba = "1 1 1 1" density="50"/>
