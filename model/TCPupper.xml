@@ -133,11 +133,11 @@ _ext indicates linear extension of the leg. Positive values = leg goes up
             <joint name="fr_x" axis="1 0 0" range="-1.57 1.57"/>
             <body name="fr" pos="0 -0.03 0">
                 <joint name="fr_y" axis="0 1 0" range="-1.57 1.57"/>
-                <geom axisangle="0 1 0 0" name="fr" fromto="0 0 0 0 0 -0.080" size="0.01" type="capsule" rgba = "1 1 1 1" density="50"/>
+                <geom axisangle="0 1 0 0" name="fr" fromto="0 0 0 0 0 -0.080" size="0.01" type="mesh" mesh="fcupperleg" rgba = "1 1 1 1" density="50"/>
                 <body name="fr2" pos="0 0 -0.0785">
                     <joint name="fr_y2" axis="0 1 0" range="-3.14 0.0"/>
                     <geom type="mesh" mesh="M2006" material="M2006" pos="0 -.05 .04" quat="0.707 0.707 0 0"/>
-                    <geom axisangle="0 1 0 0" name="fr_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="capsule" rgba = "1 1 1 1" density="50"/>
+                    <geom axisangle="0 1 0 0" name="fr_l2" fromto="0 0 0 0 0 -0.110" size="0.01" type="mesh" mesh="fclowerleg" rgba = "1 1 1 1" density="50"/>
                 </body>
             </body>
         </body>
